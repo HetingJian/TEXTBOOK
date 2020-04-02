@@ -1,0 +1,11 @@
+当区间[l,r]的更新是r=mid；l=mid+1是，计算mid是不需要加1‘
+也就是说mid要放在下次检查中时，就不用在二分的时候加1
+同理，如果二分的时候mid不要了，就要+1
+int bsearch(){
+ while(l<r)
+ {
+   int mid=l+r>>1;
+   if(check(mid)) r=mid;   //mid通过check，并且还要接受下次check
+   else l=mid+1;
+ }
+}

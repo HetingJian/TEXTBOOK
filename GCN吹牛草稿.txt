@@ -1,0 +1,41 @@
+GCN 半监督图卷积神经网络
+网络结构：
+1、在构建模型的时候已经将PMI矩阵进行正则化
+2、卷积层采用矩阵乘法进行卷积操作，矩阵分别为邻接矩阵求逆，
+正则化之后的节点相关性矩阵（PMI矩阵-point_wise mutual矩阵）
+从图中提取出节点的相关性信息，然后降维，通过半监督学习
+改变低位矩阵的参数从而实现神经网络
+3、激励层，使用relu函数
+4、以及一个低维度的正则初始为随机的矩阵作为输出层
+
+数据输入
+1、先split()分词,再用nltk.stopwords去掉没有意义的词汇
+2、打上每章每节的标签，标签有'b'、'c'
+3、使用pandas的dataframe输入数据，计算tf-idf、pmi
+使有关数据在预处理过程中（调用正则化API）就有一定的数学科学性
+4、总词汇数是n,那么进行运算的邻接矩阵和PMI矩阵都是n*n尺寸的
+在乘上一个n*k的随机矩阵，k为章节总数
+
+为什么使用GCN?
+1、在跟随导师做项目的时候是进行的人体骨架分析，在疫情期间学校封闭，
+本人电脑GPU性能一般，需要服务器进行运算，由于对GCN的了解还是停在感性
+认识，所以先进行使用CPU进行训练的NLP项目，同时也能了解许多NLP相关的基础
+知识，拓展了知识面
+2、GCN可以对非欧空间的数据进行运算，属于相对比较前沿的一种神经网络，在学习
+过程中我先了解了有关CNN和LSTM的简单知识，了解神经网络间相通的理论基础，
+然后便上手进行实际操练然后便上手进行实际操练
+
+
+applying the graph convolution
+
+we summarize the advantages and disadvantage of the GCN model as follows
+the advantages are:
+1)the graph convolution-Laplacion smoothing helps making the classification
+problem much easier
+2)the multi-layer neural network is a powerful feature extractor
+
+the disadvantage are:
+1)the graph convolution is a localized filter,which performs 
+unsatisfactory with few labeled data
+2)the neural network needs considerable amount of labeled data
+for validation(确认) and model selection

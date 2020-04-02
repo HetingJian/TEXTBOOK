@@ -1,0 +1,5 @@
+memset(void *buffer,int c,int count)
+buffer为指针或数组
+c是赋给buffer的值
+count是buffer的长度
+举例： char a[100];memset(a,'/0',sizeof(a));

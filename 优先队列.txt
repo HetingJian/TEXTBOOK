@@ -1,0 +1,15 @@
+优先队列是一种特殊的队列，它是以堆的形式来存储队列中的元素，
+并且在每次插入和删除数据时，会自动对数据进行排序，相当于大顶排序。
+
+priority_queue<int,vector<int>,greater<int> > q2;  //小顶堆
+priority_queue<PII,vector<PII>,greater<PII> > heap;
+priority_queue<Type,Container,Functional>
+
+greater排序从小到大
+priority_queue<int,vector<int>,greater<int> > q;
+q.pop()删除队顶元素
+q.push(x)压入一个元素
+q.size()返回元素个数
+q.top()返回q的第一个元素
+
+哈夫曼树是不需要层数的，只要toppoptoppop,压回去，然后ans+=就行

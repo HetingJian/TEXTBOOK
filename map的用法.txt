@@ -1,0 +1,25 @@
+在定义数组的时候实际上是定义了一个下标到数据的映射
+int array[]就是实现了int 到 int 的映射
+有的时候需要把字符串映射到 int 该怎么操作呢
+map<string,int> mp;
+对于一个下标为字符的map容器，可以用下标直接访问
+map<char,int> mp;
+mp['c']就可以访问到c对应的 int
+当然，更加符合人类逻辑的是使用迭代器来访问map
+
+mp['m']=20;
+mp['r']=30;
+mp['a']=40;
+
+for(map<char,int>::iterator it=mp.begin();it!=mp.end();it++)
+{
+  printf("%c %d\n",it->first,it->second)'
+}
+
+一个必须注意的现象是map会以键从小到大的顺序自动排序，输入的是m、r、a，但输出的顺序会变成a、m、r。
+
+map里常用的函数
+find(key) 返回键为key的映射的迭代器
+mp['b']=2;
+map<char,int>::iterator it=mp.find('b');
+map的输出用的是it->first,it->second，和之前的vector输出值要用*it有些许区别

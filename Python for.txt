@@ -1,0 +1,76 @@
+# 多值for操作
+for x,y in [(1,1),(2,4),(3,9)]:
+	print(x,y)
+	
+1 1
+2 4
+3 9
+
+
+# 生成下标
+for x,y in enumerate(['a','b','c']):
+	print(x,y)
+	
+0 a 
+1 b
+2 c
+
+
+# 生成列表
+[x*x for x in range(1,11)]
+
+# 获取dict中的value
+d={'a':'A','b':'B','c':'C'}
+[k+'='+'v' for k,v in d.items()]
+['c=C','a=A','b=B']
+# 在字典中循环时，用items()方法可将关键字和对应的值同时取出
+for k,v in d.items():
+    print(k,'=',v)
+    
+    
+# 当在序列中循环是，用enumerate()可将索引位置和对应的值同时取出   意思是列举、枚举
+for i,v in enumerate(['tic','tac','toe']):
+    print(i,v)
+    
+0 tic
+1 tac
+2 toe
+
+# 当在多个序列中进行循环式时，可以用zip()函数将其内元素一一匹配
+>>> questions = ['name', 'quest', 'favorite color']
+>>> answers = ['lancelot', 'the holy grail', 'blue']
+>>> for q, a in zip(questions, answers):
+...     print('What is your {0}?  It is {1}.'.format(q, a))
+...
+What is your name?  It is lancelot.
+What is your quest?  It is the holy grail.
+What is your favorite color?  It is blue.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

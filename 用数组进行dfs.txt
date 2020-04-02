@@ -1,0 +1,27 @@
+main()里一定要记得初始化
+memset(h,-1,sizeof h)不然白给
+
+
+void add(int a,int b)
+{
+    e[idx]=b;ne[idx]=h[a],h[a]=idx++;
+}
+void dfs(int u)
+{
+    st[u]=true;
+    for(int i=h[u];i!=-1;i=ne[i])
+    {
+	int j=e[i];
+	if(st[j]) continue;
+	int s=dfs(j);
+	size=max(s,size);
+	sum+=s;
+    }
+    size=max(size,n-sum-1);
+    ans=min(ans,size);
+    return size+1;
+}
+int main()
+{
+
+}

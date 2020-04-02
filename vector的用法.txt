@@ -1,0 +1,88 @@
+vector<typename> name; 本质是一个变长数组，但是多了很多操作
+vector<int> vi[100];
+vector<int>::iterator it;
+
+vector<int> vi;
+vector<int>::iterator it=vi.begin();
+for(int i=0;i<5;i++){
+  printf("%d",*(it+1));
+}                    星号是取值，相当于取it所在内容里的值
+也可以发现 vi[i]和vi.begin()是等价的
+push_back(x)是在vector后面添加一个元素
+pop_back()是pop back的一个元素
+size()是获得vector 中元素的个数，返回值为unsigned,用%d输出
+erase()删除单个元素或者删除一个区间的所有元素
+erase(it)即为删除迭代器it所在位置的元素
+erase(first,last)即删除[first,last)内的所有元素
+1、当数组用
+2、做邻接表的图问题的时候用
+
+所有STL容器都提供了一些基本方法
+size()返回容器中元素数目
+swap()交换两个容器中的内容
+begin()返回一个指向容器中第一个元素的迭代器
+end()返回一个表示超过容器尾的迭代器
+
+什么是迭代器？
+迭代器是一个广义指针。事实上，他可以是指针，也可以是一个
+可对其执行类似指针操作的对象。
+vector<double>::iterator pd;// pd an iterator
+假设scores是一个vector<double>对象
+vector<double> scores;
+pd= scores.begin();  //have pd point to the first element
+*pd=22.3
+++pd;                //make pd point to the next element
+迭代器一般用自动推断auto deduction
+auto pd = scores.begin();
+
+for(pd = scores.begin();pd!=scores.end();pd++)
+  cout<<*pd;
+
+基于范围的for循环
+是为用于STL而设计的
+double price[5]={4.99,10.99,6.87,7.99,8.49};
+for(double x:prices)
+    cout<<x<<endl;
+
+for(auto x:books) ShowReviews(x);
+编译器推断出x的类型为Review,而循环将依次将books中的每个Review对象传递
+给ShowReview()
+
+vector还是可反转容器，rbegin()和rend()，前者返回一个指向
+反转序列的第一个元素的迭代器，后者返回反转序列的超尾迭代器。
+for_each(dice.begin(),dice.end(),show);  //display in order
+cout<<endl;     
+for_each(dice_rbegin(),dice.rend(),show); //display in reversed order
+cout<<endl;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
